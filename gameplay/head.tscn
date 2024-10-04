@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://brgnagje13f7w"]
+
+[ext_resource type="Script" path="res://gameplay/head.gd" id="1_4ybki"]
+[ext_resource type="Texture2D" uid="uid://cg12k7404mixv" path="res://gameplay/sprites/head-dw-logo.png" id="1_ixw5m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eofuu"]
+
+[node name="Head" type="Area2D"]
+script = ExtResource("1_4ybki")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ixw5m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eofuu")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
