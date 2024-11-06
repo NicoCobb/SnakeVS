@@ -1,6 +1,7 @@
 class_name SnakePart extends Area2D
 
 var last_position:Vector2
+var player:int
 
 func move_to(new_position:Vector2):
 	last_position = self.position
