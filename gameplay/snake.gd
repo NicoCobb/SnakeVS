@@ -15,6 +15,7 @@ var snake_parts:Array[SnakePart] = []
 
 var player:int = 0
 
+#TODO: separate on spawn p1 p2 somehow
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var spawn_point:Vector2 = Vector2.ZERO
