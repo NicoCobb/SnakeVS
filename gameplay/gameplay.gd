@@ -3,18 +3,10 @@ class_name Gameplay extends Node2D
 const gameover_scene:PackedScene = preload("res://menus/game_over.tscn")
 const pause_scene:PackedScene = preload("res://menus/pause_menu.tscn")
 
-
-@onready var head: Head = %Head as Head
 @onready var bounds: Bounds = %Bounds
 @onready var spawner: Spawner = %Spawner
 @onready var hud: HUD = %HUD
 
-var time_between_moves:float = 1000.0
-var time_since_last_move:float = 0
-var speed:float = 10000.0
-var move_dir:Vector2 = Vector2.RIGHT #Vector2(1,0)
-var p1_snake_parts:Array[SnakePart] = []
-var p2_snake_parts:Array[SnakePart] = []
 var gameover_menu:GameOver
 var pause_menu:PauseMenu
 var score:int:
@@ -27,7 +19,7 @@ var score:int:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#connect all signals
-	head.food_eaten.connect(_on_food_eaten)
+	Global.food_eaten.connect(_on_food_eaten)
 	head.collided_with_tail.connect(_on_tail_collided)
 	spawner.tail_added.connect(_on_tail_added)
 	
@@ -65,6 +57,7 @@ func update_snake():
 	for i in range(1, p1_snake_parts.size(), 1):
 		p1_snake_parts[i].move_to(p1_snake_parts[i-1].last_position)
 
+#TODO: remove for 2p
 func _on_food_eaten():
 	#note: it's less efficient to use a spawner here instead of just moving the node
 	#	   but this is kind of for practice anyway

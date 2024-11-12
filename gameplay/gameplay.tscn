@@ -45,3 +45,7 @@ bounds = NodePath("../Bounds")
 
 [node name="HUD" parent="." instance=ExtResource("6_d0g3k")]
 unique_name_in_owner = true
+
+[node name="P1Spawn" type="Node2D" parent="."]
+
+[node name="P2Spawn" type="Node2D" parent="."]
