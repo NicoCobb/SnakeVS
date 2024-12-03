@@ -5,6 +5,7 @@ signal food_eaten
 #@onready var head: Head = %Head as Head
 var head_scene:PackedScene = preload("res://gameplay/head.tscn")
 var tail_scene:PackedScene = preload("res://gameplay/tail.tscn")
+#spawner???
 
 var time_between_moves:float = 1000.0
 var time_since_last_move:float = 0
